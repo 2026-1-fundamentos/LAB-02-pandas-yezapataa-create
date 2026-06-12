@@ -21,3 +21,16 @@ def pregunta_03():
     Name: count, dtype: int64
 
     """
+    import pandas as pd
+   
+    df = pd.read_csv("files/input/tbl0.tsv", sep="\t")
+
+    conteo_registros = df["c1"].value_counts()
+
+    resultado = conteo_registros.sort_index()
+
+    return resultado
+
+
+if __name__ == "__main__":
+    print(pregunta_03())
